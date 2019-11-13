@@ -2476,22 +2476,22 @@ box-shadow: 0px 8px 11px 3px #0000001a;
   padding: 15px;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
+  background: #151515a1;
 }
 
 .technology-stack .benefit_box img {
   max-width: 125px;
   transition: 0.3s all ease-in-out;
-  filter: grayscale(100%) brightness(110%) contrast(0.9);
+  filter: grayscale(100%) brightness(110%) invert(1);
 }
 
 .technology-stack .benefit_box:hover img {
-  filter: grayscale(100%) brightness(53%) sepia(111%) hue-rotate(-50deg)
-    saturate(659%) contrast(0.8);
+  filter:none;
 }
 .technology-stack .benefit_box:hover {
   box-shadow: 0px 8px 11px 3px #0000001a;
   transform: translateY(-5px);
-  background: #0000008a;
+  background: #5a5a5a8a;
 }
 
 /*===================================*

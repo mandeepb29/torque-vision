@@ -4,10 +4,15 @@ Template Name: Cryptoking - Bitcoin & ICO Cryptocurrency Landing Page HTML Templ
 Version      : 1.5
 ===================================*/
 
-/*===================================*
+/*================================ ===*
 LANDING PAGE JS
 *===================================*/
 
+// function myFunction() {
+// 	console.log('hit');
+// 	let x=document.getElementById("first-name").value
+// 	console.log(x)
+//   }
 (function($) {
 	'use strict';
 	
@@ -18,6 +23,27 @@ LANDING PAGE JS
 		var preLoder = $(".preloader");
 		preLoder.delay(700).fadeOut(500);
 	});
+
+	const Url='https://tv-backend.herokuapp.com/post';
+
+
+$('#submitButton').click(function(){
+	console.log('hitttttttt');
+	let name=document.getElementById("first-name").value;
+	let email=document.getElementById("email").value;
+	let subject =document.getElementById("subject").value;
+	let desc= document.getElementById("description").value;
+	$.ajax({
+		url: Url,
+		type: "POST",
+		contentType: 'application/json',
+        data: JSON.stringify({"name": name, "email":email, "subject": subject, "desc":desc}),
+		// data: {name: 'John'},
+		success: function(data){
+			console.log(data);
+		}
+	  });
+})
 
 	/*===================================*
 	02. SMOOTH SCROLLING JS
@@ -242,35 +268,35 @@ LANDING PAGE JS
 	/*===================================*
 	08. CONTACT FORM JS
 	*===================================*/
-	$("#submitButton").on("click", function(event) {
-	    event.preventDefault();
-	    var mydata = $("form").serialize();
-	    $.ajax({
-	        type: "POST",
-	        dataType: "json",
-	        url: "contact.php",
-	        data: mydata,
-	        success: function(data) {
-	            if (data.type === "error") {
-	                $("#alert-msg").removeClass("alert-msg-success");
-	                $("#alert-msg").addClass("alert-msg-failure");
-	            } else {
-	                $("#alert-msg").addClass("alert-msg-success");
-	                $("#alert-msg").removeClass("alert-msg-failure");
-	                $("#first-name").val("Enter Name");
-	                $("#email").val("Enter Email");
-	                $("#subject").val("Enter Subject");
-	                $("#description").val("Enter Message");
+	// $("#submitButton").on("click", function(event) {
+	//     event.preventDefault();
+	//     var mydata = $("form").serialize();
+	//     $.ajax({
+	//         type: "POST",
+	//         dataType: "json",
+	//         url: "contact.php",
+	//         data: mydata,
+	//         success: function(data) {
+	//             if (data.type === "error") {
+	//                 $("#alert-msg").removeClass("alert-msg-success");
+	//                 $("#alert-msg").addClass("alert-msg-failure");
+	//             } else {
+	//                 $("#alert-msg").addClass("alert-msg-success");
+	//                 $("#alert-msg").removeClass("alert-msg-failure");
+	//                 $("#first-name").val("Enter Name");
+	//                 $("#email").val("Enter Email");
+	//                 $("#subject").val("Enter Subject");
+	//                 $("#description").val("Enter Message");
 
-	            }
-	            $("#alert-msg").html(data.msg);
-	            $("#alert-msg").show();
-	        },
-	        error: function(xhr, textStatus) {
-	            alert(textStatus);
-	        }
-	    });
-	});
+	//             }
+	//             $("#alert-msg").html(data.msg);
+	//             $("#alert-msg").show();
+	//         },
+	//         error: function(xhr, textStatus) {
+	//             alert(textStatus);
+	//         }
+	//     });
+	// });
 	
 	
 	/*===================================*
