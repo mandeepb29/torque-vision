@@ -438,7 +438,6 @@ $('form').on('submit', validate);
 	});
 			
 })(jQuery);
-
 	/*===================================*
 	 07. VIDEO ON HOVER
 	*===================================*/
@@ -460,3 +459,4 @@ $('form').on('submit', validate);
 	}
 
 
+//https://webdesign.tutsplus.com/tutorials/how-to-integrate-no-captcha-recaptcha-in-your-website--cms-23024
