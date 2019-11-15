@@ -1205,7 +1205,7 @@ header a:hover,
 .logo_light {
   width: 200px;
   filter: grayscale(0.5) brightness(1.9);
-  margin-left: 50px;
+  margin-left: 5vw;
 }
 .logo_dark,
 .v_light .logo_light {
@@ -1288,6 +1288,10 @@ header a:hover,
 /* .banner_btn .btn {
   display: inline-block;
 } */
+.error-red{
+  border-color: #fa3b3b ;
+  color: #fa3b3b;
+}
 .section_wave {
   background-position: left top;
   bottom: 0;
@@ -1611,6 +1615,9 @@ box-shadow: 0px 8px 11px 3px #0000001a;
 05. Work SECTION
 *===================================*/
 #about img {
+  width: 85%;
+  opacity: 0.55;
+  margin: auto;
   filter: grayscale(1);
 }
 .video video {

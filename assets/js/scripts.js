@@ -1,18 +1,5 @@
-/*===================================
-Author       : Bestwebcreator.
-Template Name: Cryptoking - Bitcoin & ICO Cryptocurrency Landing Page HTML Template
-Version      : 1.5
-===================================*/
 
-/*================================ ===*
-LANDING PAGE JS
-*===================================*/
 
-// function myFunction() {
-// 	console.log('hit');
-// 	let x=document.getElementById("first-name").value
-// 	console.log(x)
-//   }
 (function($) {
 	'use strict';
 	
@@ -26,24 +13,56 @@ LANDING PAGE JS
 
 	const Url='https://tv-backend.herokuapp.com/post';
 
+	
 
-$('#submitButton').click(function(){
-	console.log('hitttttttt');
+var validate = function(e){
+	//console.log('hitttttttt');
 	let name=document.getElementById("first-name").value;
 	let email=document.getElementById("email").value;
 	let subject =document.getElementById("subject").value;
-	let desc= document.getElementById("description").value;
-	$.ajax({
-		url: Url,
-		type: "POST",
-		contentType: 'application/json',
-        data: JSON.stringify({"name": name, "email":email, "subject": subject, "desc":desc}),
-		// data: {name: 'John'},
-		success: function(data){
-			console.log(data);
-		}
-	  });
-})
+	let description= document.getElementById("description").value;
+	var flag = 1;
+	if(email === ""){
+		document.getElementById("email").style.borderColor="#fa3b3b";
+		document.getElementById("email").placeholder = "Email cannot be null";
+		flag=0;
+	}
+	if(subject === ""){
+		document.getElementById("subject").style.borderColor="#fa3b3b";
+		document.getElementById("subject").placeholder = "Subject cannot be null";
+		
+		flag=0;
+	}
+	if(description === ""){
+		document.getElementById("description").style.borderColor="#fa3b3b";
+		document.getElementById("description").placeholder = "Message cannot be null";
+		
+		flag=0;
+	}if(name === ""){
+		document.getElementById("first-name").style.borderColor="#fa3b3b";
+		document.getElementById("first-name").placeholder = "Name cannot be null";
+		flag=0;
+	}
+	if(flag==1){
+		$.ajax({
+			url: Url,
+			type: "POST",
+			contentType: 'application/json',
+			data: JSON.stringify({"name": name, "email":email, "subject": subject, "desc":description}),
+			// data: {name: 'John'},
+			success: function(data){
+				console.log(data);
+			}
+		  });
+	}
+	else{
+		e.preventDefault();
+        console.log("validations not fullfilled");
+	}
+	
+}
+
+$('form').on('submit', validate);
 
 	/*===================================*
 	02. SMOOTH SCROLLING JS
@@ -311,7 +330,7 @@ $('#submitButton').click(function(){
 	});
 	
 	$(".scrollup").on('click', function (e) {
-		e.preventDefault();
+		
 		$('html, body').animate({
 			scrollTop: 0
 		}, 600);
@@ -424,12 +443,20 @@ $('#submitButton').click(function(){
 	 07. VIDEO ON HOVER
 	*===================================*/
 	const videos = document.querySelectorAll('video')
-	
-	videos.forEach(video => {
-		video.addEventListener("mouseover", function(){
-			this.play();
+	if(screen.width > 768){
+		videos.forEach(video => {
+			video.addEventListener("mouseover", function(){
+				this.play();
+			});
+			video.addEventListener("mouseout", function(){
+				this.pause();
+			});
+		})
+	}
+	else{
+		videos.forEach(video => {
+			video.setAttribute("controls","controls") ;
 		});
-		video.addEventListener("mouseout", function(){
-			this.pause();
-		});
-	})
+	}
+
+
