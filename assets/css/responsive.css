@@ -140,6 +140,12 @@ section.small_pt {
 .h3, h3 {
 	font-size: 1.5rem;
 }
+.domain-box img{
+	margin: auto;
+}
+.domain-box p{
+	margin:1rem auto 1rem;
+}
 p,
 .footer_title{
 	margin:3rem auto 1rem;
@@ -251,6 +257,15 @@ header.nav-fixed {
   max-width: 768px
 ---------------------------------------------------*/
 @media only screen and (max-width: 768px) {
+
+	.card-bg{
+		position: absolute;
+		height:110% !important;
+		width: 60% !important;
+		max-width: 70% !important;
+		opacity: 0.07;
+	  }
+
 section,
 .top_footer {
 	padding: 70px 0;

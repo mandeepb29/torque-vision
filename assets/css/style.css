@@ -78,6 +78,28 @@ li {
   margin: 0;
   padding: 0;
 }
+
+/*scrollbar styles*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+ 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2c2c2ce7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(259, 59, 59); border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #df3434;
+}
 .form-control::-webkit-input-placeholder {
   color: #7ab9ff;
   font-weight: 400;
@@ -132,12 +154,13 @@ button {
   padding: 10px 20px;
   text-transform: uppercase;
   transition: all 0.5s ease 0s;
+  outline: none !important;
 }
 button:hover {
   color: #fff;
 }
-button:focus {
-  outline: none;
+button:focus{
+  outline: none !important;
 }
 .title_light h2,
 .title_dark h2 {
@@ -1188,10 +1211,11 @@ header a:hover,
   color: #fff;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 0 25px;
+  padding: 0 10px;
   font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   margin: 0 12px;
 }
 .nav_btn li {
@@ -1518,10 +1542,11 @@ header a:hover,
   transition: all 0.3s ease-in-out;
   border-radius: 12px;
   cursor: pointer;
+  box-shadow: 2px 2px 18px -6px rgba(0,0,0,0.5);
 }
-.box_inner:hover{
+/* .box_inner:hover{
 box-shadow: 0px 8px 11px 3px #0000001a;
-}
+} */
 .work_box:nth-child(2n) {
   position: relative;
   top: 150px;
@@ -1576,36 +1601,93 @@ box-shadow: 0px 8px 11px 3px #0000001a;
 /*===================================*
 05. END ABOUT SECTION
 *===================================*/
+
 .domain-box {
   padding: 25px;
   background: #26282b;
   display: flex;
   margin: 1rem auto;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   transition: all 0.3s ease-in-out;
-  border-radius: 12px;
+  border-radius: 5px;
   cursor: pointer;
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.card-bg{
+  position: absolute;
+  height:80% !important;
+  width: 40% !important;
+  max-width: 40% !important;
+  opacity: 0.1 !important;
+  transition: all 0.3s ease-in-out;
+  right: -50px;
+  bottom: -20px;
 }
 .domain-box:hover {
   box-shadow: 0px 8px 11px 3px #0000001a;
   transform: translateY(-5px);
   background: #0000008a;
 }
+.domain-box:hover .card-bg{
+  opacity: 0.03!important;
+}
+.domain-box:hover p{
+  opacity: 1;
+}
 .domain-box img {
   max-width: 85px;
   transition: all 0.3s ease-in-out;
   filter: invert(1);
 }
-/* .domain-box:hover img{
-	filter: invert(0.45);
-} */
-.domain-box p {
+.sub-domains .domain-box{
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  min-height: 160px;
+  align-items: center;
+  border-radius: 12px;
+  text-align: center;
+}
+.sub-domains .domain-box:hover{
+  border: 1.5px solid #fa3b3b62;
+}
+.sub-domains .domain-box p{
+  font-size: 0.85rem;
   margin: 16px 0 0;
   font-weight: 600;
   color: #fff;
+  line-height: 1.05rem;
   transition: all 0.3s ease-in-out;
+}
+.sub-domains .domain-box img{
+  max-width: 60px;
+  filter:brightness(0.5) invert(1);
+}
+.sub-domains .domain-box:hover img{
+  filter:brightness(1)  invert(1);
+}
+/* .domain-box:hover img{
+	filter: invert(0.45);
+} */
+.main-domains .domain-box p {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  color: #dddddd;
+  opacity: 0.9;
+  font-weight: 600;
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.main-domains .domain-box img{
+  opacity: 0.5;
+}
+.main-domains .domain-box:hover img{
+  opacity: 1;
+}
+.main-domains .domain-box{
+  background: rgb(0,0,0);
+ background: linear-gradient(94deg, #131313 0%, #0e0e0ed5 73%);
 }
 .domain-box:hover p {
   color: #fa3b3b;
@@ -2197,7 +2279,7 @@ box-shadow: 0px 8px 11px 3px #0000001a;
   transition: all 1s ease 0s;
 }
 .social_team a {
-  background-color: #25b8d5;
+  background-color: #fa3b3b;
   border-radius: 40px;
   color: #ffffff;
   display: block;
@@ -2210,16 +2292,7 @@ box-shadow: 0px 8px 11px 3px #0000001a;
   z-index: 1;
 }
 .social_team a:before {
-  background: -webkit-linear-gradient(
-    left,
-    rgba(117, 88, 165, 1) 0%,
-    rgba(37, 184, 213, 1) 99%
-  );
-  background: linear-gradient(
-    to right,
-    rgba(117, 88, 165, 1) 0%,
-    rgba(37, 184, 213, 1) 99%
-  );
+  background: #222;
   border-radius: 40px;
   content: "";
   height: 100%;
