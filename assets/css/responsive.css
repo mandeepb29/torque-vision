@@ -419,6 +419,9 @@ p,
   max-width: 480px
 ---------------------------------------------------*/
 @media only screen and (max-width: 580px) {
+	.main-domains .domain-box p {
+		font-size: 1.5rem;
+	  }
 	.logo_light{
 		margin-left: 15px;
 
