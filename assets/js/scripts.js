@@ -117,7 +117,8 @@
     var navbarLink = $(this);
 
     navbarLink.on("click", function() {
-      navBar.find(".navbar-collapse").collapse("hide");
+      navBar.find(".navbar-collapse").toggleClass("show");
+      $("header").toggleClass("active");
     });
   });
 
