@@ -19,6 +19,9 @@ section,
 .top_footer {
 	padding: 80px 0;
 }
+.banner_section{
+	min-height: 50vh;
+}
 section.small_pb {
 	padding-bottom: 40px;
 }
@@ -140,11 +143,24 @@ section.small_pt {
 .h3, h3 {
 	font-size: 1.5rem;
 }
-.domain-box img{
+
+.banner_section{
+	min-height: 100vh;
+}
+
+.work-desc{
+	margin-top: 35px;
+}
+
+.domain-box-small{
+	margin: 20px 0;
+	text-align: center;
+}
+.domain-box-small img, .domain-box-big img{
 	margin: auto;
 }
-.domain-box p{
-	margin:1rem auto 1rem;
+.domain-box-small p , .domain-box-big p{
+	margin:0.5rem 0 0.5rem;
 }
 p,
 .footer_title{
@@ -422,12 +438,10 @@ p,
 	.domain-box-big p {
 		font-size: 1.5rem;
 	  }
+	 
 	.logo_light{
 		margin-left: 15px;
 
-	}
-	.work-desc{
-		margin-top: 35px;
 	}
 .res_xs_mb_20 {
 	margin-bottom: 20px;	
