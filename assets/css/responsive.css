@@ -422,6 +422,7 @@ p,
 	float: none;
 	padding-left: 0;
 	width: 100%;
+	margin-top:30px;
 }
 .work_box:nth-child(2n) {
 	position: static;
