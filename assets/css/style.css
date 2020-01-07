@@ -1060,6 +1060,11 @@ box-shadow: 0px 8px 11px 3px #0000001a;
 .video video {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s all ease;
+}
+.video video:hover{
+  opacity: 1;
 }
 .work-desc h2 {
   font-family: "Fjalla One", sans-serif;
