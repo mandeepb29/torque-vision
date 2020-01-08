@@ -165,7 +165,6 @@ section.small_pt {
 .domain-box-small p , .domain-box-big p{
 	margin:0.5rem 0 0.5rem;
 }
-p,
 .footer_title{
 	margin:3rem auto 1rem;
 }
@@ -540,6 +539,10 @@ section.small_pt {
 section.small_pb {
 	padding-bottom: 20px;
 }
+.work-desc h4{
+	font-size: 18px;
+	letter-spacing: -0.3px;
+  }
 .hide_m {
 	display: none;
 }
