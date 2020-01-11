@@ -611,8 +611,9 @@ header {
 }
 .nav-fixed,
 header.active {
-  background-color: #0f3e97;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  background-color: #000000d4;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 header.nav-fixed .navbar {
@@ -648,11 +649,6 @@ header a:hover,
   width: 200px;
   filter: grayscale(0.5) brightness(1.9);
   margin-left: 5vw;
-}
-
-.v_dark .nav-fixed,
-.v_dark header.active {
-  background-color: #000000e7;
 }
 
 /*===================================*
@@ -697,17 +693,6 @@ header a:hover,
 .banner_image_right {
   min-width: 690px;
 }
-.banner_image_right img {
-  filter: grayscale();
-}
-.banner_image_left {
-  left: -25%;
-  min-width: 690px;
-  position: relative;
-}
-/* .banner_btn .btn {
-  display: inline-block;
-} */
 .error-red {
   border-color: #fa3b3b;
   color: #fa3b3b;
